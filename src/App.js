@@ -1,9 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Login from "./pages/login";
+import Register from "./pages/register";
+
 function App() {
   return (
     <div>
-      <h1 className="text-2xl text-red-500 font-bold bg-yellow-300">
-        Welcome to the Frontend! Rodrigo
-      </h1>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
